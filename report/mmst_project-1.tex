@@ -144,9 +144,15 @@
 В постановці задачі було запропоновано обрати одне з львівських перехресть, яке повинне відповідати вищеописаним вимогам. Ретельно дослідивши значну кількість перехрещених доріг було вирішено обрати для моделювання перехрестя вулиць Липинського та Замарсинівська, зображеного на Рис. 1: \\
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=.8]{image/p1.png}
+		\includegraphics[scale=.6]{image/p1.png}
 	\end{center}
-\caption{Вибране перехрестя.}
+\caption{Обране перехрестя.}
+\end{figure}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=.2]{image/fff.png}
+	\end{center}
+	\caption{Інтенсивність руху за годину.}
 \end{figure}
 \newpage
 \subsection{Моделювання}
@@ -162,7 +168,7 @@
 	\caption{Змодельоване перехрестя в cередовищі SUMO.}
 \end{figure}
 \newpage		
-\subsection{Оптимізація}
+\subsection{Оптимізація кільцем 1}
 Оптимізація руху відбулась встановленням кільця.
 \begin{figure}[h!]
 	\centering
@@ -176,50 +182,97 @@
 	\includegraphics[scale=.18]{image/p5.png} \\
 	\caption{Оптимізоване перехрестя в cередовищі SUMO.}
 \end{figure}
-
-\newpage
-\section{Результати}
-\subsection{Результати початкової моделі}
+\subsection{Оптимізація кільцем 2}
+Оптимізація руху відбулась встановленням кільця.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g1.png} \\	
-	\caption{Графік залежності завантаженості від часу.}
+	\includegraphics[scale=.31]{image/pp1.png} \\	
+	\caption{Оптимізоване перехрестя в cередовищі  NetEdit.}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.31]{image/pp2.png} \\
+	\includegraphics[scale=.31]{image/pp3.png} \\
+	\caption{Оптимізоване перехрестя в cередовищі SUMO.}
+\end{figure}
+\newpage
+\section{Результати}
+\subsection{Графічні результати початкової моделі}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=.3]{image/g1.png} \\	
+	\caption{Графік залежності трафіку від часу.}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g2.png} \\	
+	\includegraphics[scale=.3]{image/g2.png} \\	
 	\caption{Графік залежності середньої швидкості від часу.}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g3.png} \\	
-	\caption{Графік залежності зупинки від часу.}
+	\includegraphics[scale=.3]{image/g3.png} \\	
+	\caption{Графічне зображення частки тривалості зупинки від загального часу.}
 \end{figure}
 \newpage
-\subsection{Результати моделі після оптимізації}
+\subsection{Графічні результати моделі після оптимізації кільцем 1}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g4.png} \\	
-	\caption{Графік залежності завантаженості від часу ОМ.}
+	\includegraphics[scale=.3]{image/g4.png} \\	
+	\caption{Графік залежності трафіку від часу ОМ.}
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g5.png} \\	
+	\includegraphics[scale=.3]{image/g5.png} \\	
 	\caption{Графік залежності середньої швидкості від часу ОМ. }
 \end{figure}
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=.18]{image/g6.png} \\	
-	\caption{Графік залежності зупинки від часу ОМ.}
+	\includegraphics[scale=.3]{image/g6.png} \\	
+	\caption{Графічне зображення частки тривалості зупинки від загального часу ОМ.}
 \end{figure}
-
+\newpage
+\subsection{Графічні результати моделі після оптимізації кільцем 2}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3]{image/ggr.png} \\	
+	\caption{Графік залежності трафіку від часу ОМ.}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3]{image/ggav.png} \\	
+	\caption{Графік залежності середньої швидкості від часу ОМ. }
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3]{image/ggh.png} \\	
+	\caption{Графічне зображення частки тривалості зупинки від загального часу ОМ.}
+\end{figure}
+\newpage
+\subsection{Порівняння чисельних результатів}
+\begin{figure}[h]
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$value$ &$test$&$test\_opt1$ & $test\_opt2$\\
+		\hline
+		 average\_speed, m/s&4.623421927 &3.084784053 &5.315448505\\
+		\hline
+		 halting&26.17607973 &47.20265781 &13.46511628  \\
+		\hline
+		running\_vehicles&57.17940199 &70.54817276 &50.25249169\\
+		\hline
+	\end{tabular}
+\caption{Порівняння моделювань}
+\end{center}
+\end{figure}
 \newpage
 \addcontentsline{toc}{section}{Висновки}
 \section*{Висновки}
 \par Дослідили симуляцію руху транспорту на перехресті. Покращили вміння та навички в роботі з середовищем моделювання <<Eclipse SUMO>>. \\
 
 
-\par В результаті досліження симуляції та оптимізації руху транспорту на перехресті методом організації на ньому кругового руху можна зробити висновки, що завантаженість перехрестя знизилась, середня швидкість зросла, а графік залежності зупинки від часу став гармонічним. 
+\par В результаті досліження симуляції та оптимізації руху транспорту на перехресті методом організації на ньому кругового руху, двома методами з різним радіусом та кривизною кола, можна зробити висновки, що найоптимальний варіант симуляції руху з більшою кривизною кола: трафік та час зупинки зменшився, а середня швидкість зросла приблизно на 0.8 м/с в порівнянні з початковою моделю. Отже, оптимізувати рух вдалось, тому доцільніше реконструювати рух на перехресті встановленням кільця з меншим радіусом та більшою кривизною.
 
 \newpage
 \addcontentsline{toc}{section}{Література}
